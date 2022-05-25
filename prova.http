@@ -1,0 +1,5 @@
+
+GET https://www.omdbapi.com/?apikey=fa602d3f&t=terminator&y=2012 HTTP/1.1
+
+###
+GET https://www.omdbapi.com/?apikey=fa602d3f&s=prova HTTP/1.1
