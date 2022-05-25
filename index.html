@@ -9,13 +9,13 @@
   <body>
     <script type="module">
       import * as provamodulo from "./index.js";
-    console.log("inizio");
-     provamodulo.funzione();
-     provamodulo.funzione2();
-     provamodulo.funzione3();
-     console.log("fine");
+      import { CONTENT_TYPE } from "./config.js";
+
+
+      provamodulo.funzione("terminator",CONTENT_TYPE.MOVIE);
+      
     </script>
 
-    
+
   </body>
 </html>
