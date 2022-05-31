@@ -1,0 +1,233 @@
+body {
+    background-color: rgb(19, 19, 19);
+    color: white;
+}
+
+.swiper {
+    width: 100%;
+    height: 520px;
+}
+
+.swiper .swiper-slide {
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    color: white;
+}
+
+#slide1 {
+    background-image: url("https://sc-b1-06.scws-content.net/images/9/93864ff3-d1e6-4961-8dee-0f12016fa495.jpg");
+}
+
+#slide2 {
+    background-image: url("https://sc-b1-07.scws-content.net/images/2/b880d89f-4a3c-4ded-9598-d77a46aec9fa.jpg");
+}
+
+#slide3 {
+    background-image: url("https://sc-b1-06.scws-content.net/images/9/aca40cbc-e31d-4a18-a951-e5e6940e7c6c.jpg");
+}
+
+.swiper .swiper-slide .h6 {
+    color: rgba(187, 179, 179, 0.973);
+    max-width: 50%;
+}
+
+.swiper .swiper-slide a {
+    color: transparent;
+}
+
+.swiper .swiper-slide button {
+    color: white;
+    border: transparent;
+    border-radius: 4%;
+    background-color: #e50914;
+    margin: 0.2%;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+
+}
+
+.swiper .swiper-pagination-bullet-active {
+    background-color: #e50914 !important;
+    ;
+}
+
+.swiper2 {
+
+    width: 100%;
+    height: 225px;
+    overflow-x: hidden;
+    text-overflow: "-";
+
+}
+
+.swiper3 {
+
+    width: 100%;
+    height: 225px;
+    overflow-x: hidden;
+    text-overflow: "-";
+
+}
+
+.swiper4 {
+
+    width: 100%;
+    height: 225px;
+    overflow-x: hidden;
+    text-overflow: "-";
+
+}
+
+.swiper2 .swiper-slide {
+    text-align: center;
+    background: linear-gradient(to top, rgb(239, 68, 68), rgb(153, 27, 27));
+    border-radius: 8px;
+
+}
+
+.swiper3 .swiper-slide {
+    text-align: center;
+    background: linear-gradient(to top, rgb(239, 68, 68), rgb(153, 27, 27));
+    border-radius: 8px;
+
+}
+
+.swiper4 .swiper-slide {
+    text-align: center;
+    background: linear-gradient(to top, rgb(239, 68, 68), rgb(153, 27, 27));
+    border-radius: 8px;
+
+}
+
+.swiper-button-prev:after {
+    color: white;
+    background-color: transparent;
+}
+
+.swiper-button-next:after {
+    color: white;
+    background-color: transparent;
+}
+
+#next3 {
+    position: relative;
+}
+
+#next2 {
+    position: relative;
+}
+
+#next {
+    position: relative;
+}
+
+#prev {
+    position: relative;
+    left: 65px;
+}
+
+#prev2 {
+    position: relative;
+    left: 65px;
+}
+
+#prev3 {
+    position: relative;
+    left: 65px;
+}
+
+#Film {
+    margin-left: 9%;
+}
+
+#serie {
+    margin-left: 9%;
+}
+
+#giochi {
+    margin-left: 9%;
+}
+
+
+
+.swiper2 .swiper-slide:hover {
+
+
+    transform: scale(0.9);
+    border: 3px solid #d0d0d0;
+
+}
+
+.swiper3 .swiper-slide:hover {
+
+    transform: scale(0.9);
+    border: 3px solid #d0d0d0;
+}
+
+.swiper4 .swiper-slide:hover {
+
+    transform: scale(0.9);
+    border: 3px solid #d0d0d0;
+}
+
+
+
+@media screen and (max-width: 750px) {
+    .swiper .swiper-slide .h6 {
+        color: rgba(187, 179, 179, 0.973);
+        max-width: 100%;
+    }
+
+    #Film {
+        margin-left: 0%;
+    }
+
+    #serie {
+        margin-left: 0%;
+    }
+
+    #giochi {
+        margin-left: 0%;
+    }
+
+    #prev {
+        display: none;
+    }
+
+    #next {
+        display: none;
+    }
+
+    #prev2 {
+        display: none;
+    }
+
+    #next2 {
+        display: none;
+    }
+
+    #prev3 {
+        display: none;
+    }
+
+    #next3 {
+        display: none;
+    }
+
+
+    #cerca{
+     display: none !important;
+
+    }
+
+    #searchbar{
+      margin-left: 0 !important ;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+}
