@@ -52,7 +52,6 @@ body {
 
 .swiper .swiper-pagination-bullet-active {
     background-color: #e50914 !important;
-    ;
 }
 
 .swiper2 {
@@ -86,7 +85,6 @@ body {
     text-align: center;
     background: linear-gradient(to top, rgb(239, 68, 68), rgb(153, 27, 27));
     border-radius: 8px;
-
 }
 
 .swiper3 .swiper-slide {
