@@ -1,13 +1,12 @@
 const swiper = new Swiper('.swiper', {
-    // Optional parameters
+
     direction: 'horizontal',
     loop: true,
 
     autoplay: {
         delay: 5000,
       },
-  
-    // If we need pagination
+
     pagination: {
       el: '.swiper-pagination',
     },
@@ -15,7 +14,6 @@ const swiper = new Swiper('.swiper', {
   });
 
   const swiper2 = new Swiper('.swiper2', {
-    // Optional parameters
 
     direction: 'horizontal',
     loop: true,
@@ -24,7 +22,6 @@ const swiper = new Swiper('.swiper', {
     spaceBetween: 10,
     slidesPerGroup: 1,
 
-    // If we need pagination
     pagination: {
       el: '.swiper-pagination2',
       clickable:"true"
@@ -47,7 +44,6 @@ const swiper = new Swiper('.swiper', {
   });
 
   const swiper3 = new Swiper('.swiper3', {
-    // Optional parameters
 
     direction: 'horizontal',
     loop: true,
@@ -56,7 +52,6 @@ const swiper = new Swiper('.swiper', {
     spaceBetween: 10,
     slidesPerGroup: 1,
 
-    // If we need pagination
     pagination: {
       el: '.swiper-pagination3',
       clickable:"true"
@@ -79,7 +74,6 @@ const swiper = new Swiper('.swiper', {
   });
 
   const swiper4 = new Swiper('.swiper4', {
-    // Optional parameters
 
     direction: 'horizontal',
     loop: true,
@@ -88,7 +82,6 @@ const swiper = new Swiper('.swiper', {
     spaceBetween: 10,
     slidesPerGroup: 1,
 
-    // If we need pagination
     pagination: {
       el: '.swiper-pagination2',
       clickable:"true"
