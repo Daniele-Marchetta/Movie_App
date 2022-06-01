@@ -154,9 +154,10 @@ body {
 
 .swiper2 .swiper-slide:hover {
 
-
     transform: scale(0.9);
     border: 3px solid #d0d0d0;
+
+
 
 }
 
@@ -171,8 +172,6 @@ body {
     transform: scale(0.9);
     border: 3px solid #d0d0d0;
 }
-
-
 
 @media screen and (max-width: 750px) {
     .swiper .swiper-slide .h6 {
