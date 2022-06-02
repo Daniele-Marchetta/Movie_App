@@ -151,14 +151,17 @@ body {
 
 #Film {
     margin-left: 9%;
+    width: fit-content;
 }
 
 #serie {
     margin-left: 9%;
+    width: fit-content;
 }
 
 #giochi {
     margin-left: 9%;
+    width: fit-content;
 }
 
 
@@ -185,30 +188,30 @@ body {
     border: 3px solid #d0d0d0;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
+
     .swiper .swiper-slide .h6 {
         color: rgba(187, 179, 179, 0.973);
         max-width: 100%;
     }
-    p.h6{
-       font-weight: bolder;
-       max-height: 320px;
-       overflow-y: hidden;
-       margin-bottom: 15px;
-    }
- 
 
+    p.h6 {
+
+        max-height: 320px;
+        overflow-y: hidden;
+        margin-bottom: 15px;
+    }
 
     #Film {
         margin-left: 0%;
     }
 
     #serie {
-        margin-left: 0%;
+        margin-left: 0% !important;
     }
 
     #giochi {
-        margin-left: 0%;
+        margin-left: 0 !important;
     }
 
     #prev {
@@ -236,15 +239,89 @@ body {
     }
 
 
-    #cerca{
-     display: none !important;
+    #cerca {
+        display: none !important;
 
     }
 
-    #searchbar{
-      margin-left: 0 !important ;
-      margin-top: 10px;
-      margin-bottom: 10px;
+    #searchbar {
+        margin-left: 0 !important;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    p.h2 {
+        font-size: 22px;
+    }
+
+}
+
+
+@media screen and (max-width: 1200px) {
+
+
+
+    .swiper .swiper-slide .h6 {
+        color: rgba(187, 179, 179, 0.973);
+        max-width: 100%;
+    }
+
+    p.h6 {
+
+        max-height: 320px;
+        overflow-y: hidden;
+        margin-bottom: 15px;
+    }
+
+
+
+
+    #film {
+        margin-left: 9% !important;
+    }
+
+    #serie {
+        margin-left: 9%;
+    }
+
+    #giochi {
+        margin-left: 9%;
+    }
+
+    #prev {
+        display: none;
+    }
+
+    #next {
+        display: none;
+    }
+
+    #prev2 {
+        display: none;
+    }
+
+    #next2 {
+        display: none;
+    }
+
+    #prev3 {
+        display: none;
+    }
+
+    #next3 {
+        display: none;
+    }
+
+
+    #cerca {
+        display: none !important;
+
+    }
+
+    #searchbar {
+        margin-left: 0 !important;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
 }
