@@ -1,5 +1,5 @@
 
-GET https://www.omdbapi.com/?apikey=fa602d3f&s=terminator HTTP/1.1
+GET https://www.omdbapi.com/?apikey=fa602d3f&s=Terminator&type="game" HTTP/1.1
 
 ###
 GET https://www.omdbapi.com/?apikey=fa602d3f&s=prova HTTP/1.1
