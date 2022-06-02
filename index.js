@@ -22,7 +22,7 @@ let swiper2 = new Swiper(".swiper2", {
   observer: true,
   observeParents: true,
 
-  slidesPerView: 3,
+  slidesPerView: 2,
   spaceBetween: 10,
   slidesPerGroup: 1,
 
@@ -37,8 +37,26 @@ let swiper2 = new Swiper(".swiper2", {
   },
 
   breakpoints: {
-    750: {
-      slidesPerView: 6,
+    425: {
+      slidesPerView: 3,
+      spaceBetween: 17,
+      slidesPerGroup: 1,
+
+      loop:false,
+      observer: true,
+      observeParents: true,
+    },
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 17,
+      slidesPerGroup: 3,
+
+      loop:false,
+      observer: true,
+      observeParents: true,
+    },
+    1024: {
+      slidesPerView: 5,
       spaceBetween: 17,
       slidesPerGroup: 3,
 
@@ -56,7 +74,7 @@ let swiper3 = new Swiper(".swiper3", {
   observer: true,
   observeParents: true,
 
-  slidesPerView: 3,
+  slidesPerView: 2,
   spaceBetween: 10,
   slidesPerGroup: 1,
 
@@ -71,10 +89,28 @@ let swiper3 = new Swiper(".swiper3", {
   },
 
   breakpoints: {
-    750: {
-      slidesPerView: 6,
+    425: {
+      slidesPerView: 3,
       spaceBetween: 17,
       slidesPerGroup: 1,
+
+      loop:false,
+      observer: true,
+      observeParents: true,
+    },
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 17,
+      slidesPerGroup: 3,
+
+      loop:false,
+      observer: true,
+      observeParents: true,
+    },
+    1024: {
+      slidesPerView: 5,
+      spaceBetween: 17,
+      slidesPerGroup: 3,
 
       loop:false,
       observer: true,
@@ -91,7 +127,7 @@ let swiper4 = new Swiper(".swiper4", {
   observer: true,
   observeParents: true,
 
-  slidesPerView: 3,
+  slidesPerView: 2,
   spaceBetween: 10,
   slidesPerGroup: 1,
 
@@ -106,10 +142,28 @@ let swiper4 = new Swiper(".swiper4", {
   },
 
   breakpoints: {
-    750: {
-      slidesPerView: 6,
+    425: {
+      slidesPerView: 3,
       spaceBetween: 17,
-      slidesPerGroup: 2,
+      slidesPerGroup: 1,
+
+      loop:false,
+      observer: true,
+      observeParents: true,
+    },
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 17,
+      slidesPerGroup: 3,
+
+      loop:false,
+      observer: true,
+      observeParents: true,
+    },
+    1024: {
+      slidesPerView: 5,
+      spaceBetween: 17,
+      slidesPerGroup: 3,
 
       loop:false,
       observer: true,
@@ -179,4 +233,4 @@ const generacard = (item) => {
 
 funzione("Avengers", CONTENT_TYPE.MOVIE);
 funzione("Looney Tunes", CONTENT_TYPE.SERIES);
-funzione("avengers", CONTENT_TYPE.GAME);
+funzione("Looney Tunes", CONTENT_TYPE.GAME);
