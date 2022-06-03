@@ -1,178 +1,8 @@
 import { BASE_URL, CONTENT_TYPE } from "./config.js";
 
-let swiper = new Swiper(".swiper", {
-  direction: "horizontal",
-  loop: true,
 
-  autoplay: {
-    delay: 5000,
-  },
 
-  pagination: {
-    el: ".swiper-pagination",
-  },
-  navigation: false,
-});
-
-let swiper2 = new Swiper(".swiper2", {
-  direction: "horizontal",
-  loop: false,
-
-  //per sbuggarlo
-  observer: true,
-  observeParents: true,
-
-  slidesPerView: 2,
-  spaceBetween: 10,
-  slidesPerGroup: 1,
-
-  pagination: {
-    el: ".swiper-pagination2",
-    clickable: "true",
-  },
-
-  navigation: {
-    nextEl: "#next",
-    prevEl: "#prev",
-  },
-
-  breakpoints: {
-    425: {
-      slidesPerView: 3,
-      spaceBetween: 17,
-      slidesPerGroup: 1,
-
-      loop:false,
-      observer: true,
-      observeParents: true,
-    },
-    768: {
-      slidesPerView: 4,
-      spaceBetween: 17,
-      slidesPerGroup: 3,
-
-      loop:false,
-      observer: true,
-      observeParents: true,
-    },
-    1024: {
-      slidesPerView: 5,
-      spaceBetween: 17,
-      slidesPerGroup: 3,
-
-      loop:false,
-      observer: true,
-      observeParents: true,
-    },
-  },
-});
-
-let swiper3 = new Swiper(".swiper3", {
-  direction: "horizontal",
-  loop: false,
-
-  observer: true,
-  observeParents: true,
-
-  slidesPerView: 2,
-  spaceBetween: 10,
-  slidesPerGroup: 1,
-
-  pagination: {
-    el: ".swiper-pagination3",
-    clickable: "true",
-  },
-
-  navigation: {
-    nextEl: "#next2",
-    prevEl: "#prev2",
-  },
-
-  breakpoints: {
-    425: {
-      slidesPerView: 3,
-      spaceBetween: 17,
-      slidesPerGroup: 1,
-
-      loop:false,
-      observer: true,
-      observeParents: true,
-    },
-    768: {
-      slidesPerView: 4,
-      spaceBetween: 17,
-      slidesPerGroup: 3,
-
-      loop:false,
-      observer: true,
-      observeParents: true,
-    },
-    1024: {
-      slidesPerView: 5,
-      spaceBetween: 17,
-      slidesPerGroup: 3,
-
-      loop:false,
-      observer: true,
-      observeParents: true,
-    },
-  },
-});
-
-let swiper4 = new Swiper(".swiper4", {
-  direction: "horizontal",
-  loop: false,
-
-  //per sbuggarlo
-  observer: true,
-  observeParents: true,
-
-  slidesPerView: 2,
-  spaceBetween: 10,
-  slidesPerGroup: 1,
-
-  pagination: {
-    el: ".swiper-pagination2",
-    clickable: "true",
-  },
-
-  navigation: {
-    nextEl: "#next3",
-    prevEl: "#prev3",
-  },
-
-  breakpoints: {
-    425: {
-      slidesPerView: 3,
-      spaceBetween: 17,
-      slidesPerGroup: 1,
-
-      loop:false,
-      observer: true,
-      observeParents: true,
-    },
-    768: {
-      slidesPerView: 4,
-      spaceBetween: 17,
-      slidesPerGroup: 3,
-
-      loop:false,
-      observer: true,
-      observeParents: true,
-    },
-    1024: {
-      slidesPerView: 5,
-      spaceBetween: 17,
-      slidesPerGroup: 3,
-
-      loop:false,
-      observer: true,
-      observeParents: true,
-    },
-  },
-});
-
-const funzione = (s, type) => {
+export const fetch_api = (s, type) => {
   const url = BASE_URL + "s=" + s + "&type=" + type + "&page=1";
   fetch(url)
     .then((response) => response.json())
@@ -211,6 +41,13 @@ const creacard_specifica = (item, tipo) => {
 
 const generacard = (item) => {
   const slide = document.createElement("div");
+  
+  slide.addEventListener('click', () => 
+{
+  location.href = `./scheda.html`;
+  sessionStorage.setItem('1', item.Title);
+});
+
   slide.className = "swiper-slide";
 
   if (item.Poster == "N/A") {
@@ -231,6 +68,22 @@ const generacard = (item) => {
   return slide;
 };
 
-funzione("Avengers", CONTENT_TYPE.MOVIE);
-funzione("Looney Tunes", CONTENT_TYPE.SERIES);
-funzione("Looney Tunes", CONTENT_TYPE.GAME);
+export const card_selezionata = () => {
+  if (!sessionStorage.getItem('1')){
+    location.href="./index.html";
+  }else{
+    alert(sessionStorage.getItem('1'));
+  }
+}
+
+
+
+
+
+
+
+  
+
+
+
+

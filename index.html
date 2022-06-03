@@ -13,9 +13,10 @@
 </head>
 
 <body>
+
   <nav class="navbar navbar-expand-lg " style="background-color: rgb(19,19,19);">
     <div class="container-fluid text-white">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="index.html">
         <img src="fakeflix.png" alt="" width="170" height="70" style="margin-left: -34px;">
       </a>
       <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse"
@@ -251,12 +252,22 @@
 
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <script src="index.js" type="module"></script>
+  <script src="swiper.js" type="module"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
     crossorigin="anonymous"></script>
+
+
+    <script type="module">
+      import { fetch_api } from "./index.js";
+      import { BASE_URL, CONTENT_TYPE } from "./config.js";
+
+      fetch_api("Avengers", CONTENT_TYPE.MOVIE);
+      fetch_api("Looney Tunes", CONTENT_TYPE.SERIES);
+      fetch_api("Looney Tunes", CONTENT_TYPE.GAME);
+    </script>
+
+
 </body>
-
-
-
 
 </html>
