@@ -3,3 +3,8 @@ GET https://www.omdbapi.com/?apikey=fa602d3f&s=Terminator&type="game" HTTP/1.1
 
 ###
 GET https://www.omdbapi.com/?apikey=fa602d3f&s=prova HTTP/1.1
+
+###
+
+GET https://youtube.googleapis.com/youtube/v3/search?&key=AIzaSyCaEhoOwB_Nl7k8iH6WXtdgLefMxwuN-Wc&q=Stranger%20things%20trailer HTTP/1.1
+

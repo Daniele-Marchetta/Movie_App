@@ -1,4 +1,4 @@
-import { BASE_URL, CONTENT_TYPE } from "./config.js";
+import { BASE_URL, CONTENT_TYPE ,URL_YT_API} from "./config.js";
 
 
 
@@ -75,6 +75,20 @@ export const card_selezionata = () => {
     alert(sessionStorage.getItem('1'));
   }
 }
+
+export const fetch_api_yt = (s) => {
+  const url = URL_YT_API + "&q=" +s+" trailer";
+  fetch(url)
+    .then((response) => response.json())
+    .then((result) => {
+      viewItemsYt(result.items[0].id.videoId);
+    });
+  }
+
+
+const viewItemsYt = (oggetto) => {
+   const iframe = document.getElementById("trailer").src=`https://www.youtube.com/embed/${oggetto}?autoplay=1`;
+ }
 
 
 
