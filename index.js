@@ -72,7 +72,7 @@ export const card_selezionata = () => {
   if (!sessionStorage.getItem('1')){
     location.href="./index.html";
   }else{
-    alert(sessionStorage.getItem('1'));
+    fetch_api_yt(sessionStorage.getItem('1'));
   }
 }
 
