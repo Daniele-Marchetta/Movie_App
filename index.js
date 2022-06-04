@@ -1,4 +1,4 @@
-import { BASE_URL, CONTENT_TYPE ,URL_YT_API} from "./config.js";
+import { BASE_URL, CONTENT_TYPE ,URL_YT_API,NoDisplay} from "./config.js";
 
 
 
@@ -73,6 +73,7 @@ export const card_selezionata = () => {
     location.href="./index.html";
   }else{
     fetch_api_yt(sessionStorage.getItem('1'));
+    fetch_api_by_title(sessionStorage.getItem('1'));
   }
 }
 
@@ -89,6 +90,57 @@ export const fetch_api_yt = (s) => {
 const viewItemsYt = (oggetto) => {
    const iframe = document.getElementById("trailer").src=`https://www.youtube.com/embed/${oggetto}?autoplay=1`;
  }
+
+ const fetch_api_by_title = (titolo)=>{
+  const url = BASE_URL + "t=" + titolo;
+  fetch(url)
+    .then((response) => response.json())
+    .then((result) => {
+      Filtraresult(result);
+    });
+ }
+
+ const crea_scheda = (attr,valore) =>{
+
+const lista = document.getElementById("lista");
+const li = document.createElement("li");
+const label_element= document.createElement("label");
+label_element.className="me-1";
+const node1= document.createTextNode(attr+" : ");
+const span = document.createElement("span");
+const node2= document.createTextNode(" "+valore);
+
+span.appendChild(node2);
+label_element.appendChild(node1);
+li.appendChild(label_element);
+li.appendChild(span);
+lista.appendChild(li);
+
+
+ }
+ const Filtraresult = (items) => {
+
+  const Poster = document.getElementById("scheda_image");
+  const trama = document.getElementById("trama");
+
+  Poster.style=`background-image: url(${items.Poster}); `;
+  
+  trama.innerHTML=items.Plot;
+    
+    for (let attributi in items){
+
+      let tipo = typeof(items[attributi]);
+      
+      if(tipo.toString()!="object"){
+        if(!NoDisplay.includes(attributi)){
+          crea_scheda(attributi,items[attributi]);
+        }
+        
+    }
+  }
+    
+ }
+
 
 
 
