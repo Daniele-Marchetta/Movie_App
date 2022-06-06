@@ -49,25 +49,43 @@
         </div>
       </nav>
 
+      
 
-      <div class="container mt-4" style="width: 70%;">
+
+      <div class="container mt-4 mb-4" style="width: 80%;">
        
-        <div class="row text-center border border-2">
-          <div class="col-lg-12 h-auto p-0" style="display: flex;">
-            <iframe id="trailer" width="100%"  height="581px" src="https://www.youtube.com/embed/22j8um1XOHE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+
+        <nav>
+          <div class="nav nav-tabs h5" id="nav-tab" role="tablist">
+            <button class="nav-link active text-bg-dark " id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-scheda" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Scheda</button>
+            <button class="nav-link text-bg-dark" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-trailer" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Trailer</button>
           </div>
-          <div class="row pt-5" >
-            <div class="col-lg-4 d-flex justify-content-center">
-              <div id="scheda_image"></div>
-          </div>
-          <div class="col-lg-7" id="altreinfo">
-              <p class="mb-4" id="trama">Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.</p>
-              <ul class="p-0 mb-3" id="lista">
-                
-              </ul>
+        </nav>
+        <div class="tab-content border border-2 pe-3 ps-3" id="nav-tabContent" >
+          <div class="tab-pane fade show active" id="nav-scheda" role="tabpanel"  tabindex="0"> 
+            <div class="row pt-5" >
+              <div class="col-lg-4 d-flex justify-content-center pb-5">
+                <div id="scheda_image"></div>
+            </div>
+            <div class="col-lg-7" id="altreinfo">
+                <p class="mb-4" id="trama">Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.</p>
+                <ul class="p-0 mb-3" id="lista">
+                  
+                </ul>
+              </div>
             </div>
           </div>
+          <div class="tab-pane fade" id="nav-trailer" role="tabpanel"  tabindex="0">
+            <div class="row text-center">
+            <div class="col-lg-12 h-auto p-0" >
+              <iframe id="trailer" width="100%"  height="581px" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+            </div>
+          </div>
+        </div>
+
+        
+        
       </div>
     
 
@@ -95,7 +113,7 @@
 
 
 
-    <footer class="bg-dark text-center text-white sticky-top" style="display: block; margin-top: 60px;">
+    <footer class="bg-dark text-center text-white mt-5" style="display:block; margin-top: 60px; bottom: 0; position: relative ; width: 100%;">
 
         <div class="container p-4 pb-0">
     
