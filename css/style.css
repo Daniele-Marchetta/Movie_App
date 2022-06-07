@@ -3,6 +3,14 @@ body {
     color: white;
 }
 
+#cerca_container .col :hover {
+ transform: scale(0.9);
+border: 3px solid #d0d0d0; 
+background-repeat: no-repeat; 
+background-size: cover;
+background-blend-mode: darken;
+}
+
 .swiper {
     width: 100%;
     height: 520px;

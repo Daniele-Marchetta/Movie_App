@@ -1,5 +1,9 @@
 import { BASE_URL, CONTENT_TYPE ,URL_YT_API,NoDisplay} from "./config.js";
 
+const barra_di_ricerca = document.getElementById("cerca");
+const riga = document.getElementById("riga");
+const primapagina = document.getElementById("pp");
+
 
 
 export const fetch_api = (s, type) => {
@@ -140,6 +144,86 @@ lista.appendChild(li);
   }
     
  }
+
+
+
+
+
+export const fetch_api_searchbar = (s) =>{
+    const urls =`${BASE_URL}&s=${s}`;
+    console.log(urls);
+    fetch(urls)
+      .then((response) => response.json())
+      .then((result) => {
+        const oggetto = result.Search;
+        if (oggetto!=undefined){
+          viewItems_searchbar(oggetto);
+        }else{
+          
+        }
+      });
+};
+
+const viewItems_searchbar = (items) => {
+    items.map((item) => {
+      generacard_searchbar(item);
+    });
+   
+
+  };
+
+
+  
+  const generacard_searchbar = (oggetto) =>{
+ 
+    
+    const colonna = document.createElement("div");
+    colonna.className="col pt-5 pb-5 d-flex justify-content-center";
+    const card = document.createElement("div");
+    card.className="card";
+    const p = document.createElement("p");
+    p.style="color : white ;text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bolder; background-color : rgba(0, 0, 0, .5); margin : 0px ; padding : 20px;";
+    const textnode = document.createTextNode(oggetto.Title);
+    if(oggetto.Poster=="N/A"){
+      card.style=`
+      background-image: url(no-image.jpg); 
+      background-size : cover; 
+      background-position : center;
+      height: 445px;
+      width: 300px;`
+    }else{
+      card.style=`background-image: url(${oggetto.Poster}); 
+       background-size : cover; 
+       background-position : center;
+       height: 445px;
+      width: 300px;`
+       
+    }
+    card.addEventListener('click', () => 
+    {
+      location.href = `./scheda.html`;
+      sessionStorage.setItem('1', oggetto.Title);
+    });
+
+    p.appendChild(textnode);
+    card.appendChild(p);
+    colonna.appendChild(card);
+    riga.appendChild(colonna);
+  }
+
+
+ barra_di_ricerca.addEventListener('keyup', (e) => 
+ { 
+   if(barra_di_ricerca.value==""||e.key==" "){
+  
+  }else{
+    primapagina.innerHTML="";
+    riga.innerHTML="";
+    fetch_api_searchbar(barra_di_ricerca.value);
+  }
+ });
+
+
 
 
 
