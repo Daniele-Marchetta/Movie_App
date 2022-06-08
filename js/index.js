@@ -82,14 +82,17 @@ export const card_selezionata = () => {
   }
 }
 
-export const fetch_api_yt = (s) => {
+export const fetch_api_yt = async(s) => {
   const url = URL_YT_API + "&q=" +s+" trailer";
-  fetch(url)
-    .then((response) => response.json())
-    .then((result) => {
-      viewItemsYt(result.items[0].id.videoId);
-    });
-  }
+  try{
+    const response= await fetch(url);
+    const result = await response.json();
+    viewItemsYt(await result.items[0].id.videoId);
+  }catch(error){
+    console.log(error);
+  };
+ 
+  };
 
 
 const viewItemsYt = (oggetto) => {
