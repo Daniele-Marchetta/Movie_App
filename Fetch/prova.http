@@ -1,5 +1,5 @@
 
-GET https://www.omdbapi.com/?apikey=fa602d3f&t=call%20%of%20duty HTTP/1.1
+GET https://www.omdbapi.com/?apikey=fa602d3f&i=tt1125798 HTTP/1.1
 
 ###
 GET https://www.omdbapi.com/?apikey=fa602d3f&s=prova HTTP/1.1

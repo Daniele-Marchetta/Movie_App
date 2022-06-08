@@ -49,7 +49,8 @@ const generacard = (item) => {
   slide.addEventListener('click', () => 
 {
   location.href = `./scheda.html`;
-  sessionStorage.setItem('1', item.Title);
+  sessionStorage.setItem('1', item.imdbID);
+  sessionStorage.setItem('2', item.Title);
 });
 
   slide.className = "swiper-slide";
@@ -76,7 +77,7 @@ export const card_selezionata = () => {
   if (!sessionStorage.getItem('1')){
     location.href="./index.html";
   }else{
-    fetch_api_yt(sessionStorage.getItem('1'));
+    fetch_api_yt(sessionStorage.getItem('2'));
     fetch_api_by_title(sessionStorage.getItem('1'));
   }
 }
@@ -95,8 +96,9 @@ const viewItemsYt = (oggetto) => {
    const iframe = document.getElementById("trailer").src=`https://www.youtube.com/embed/${oggetto}?autoplay=1`;
  }
 
- const fetch_api_by_title = (titolo)=>{
-  const url = BASE_URL + "t=" + titolo;
+ const fetch_api_by_title = (id)=>{
+  const url = BASE_URL + "i=" + id;
+  console.log(url);
   fetch(url)
     .then((response) => response.json())
     .then((result) => {
@@ -127,7 +129,8 @@ lista.appendChild(li);
   const Poster = document.getElementById("scheda_image");
   const trama = document.getElementById("trama");
 
-  Poster.style=`background-image: url(${items.Poster}); `;
+  Poster.style=`background-image: url(${items.Poster}); background-repeat: no-repeat; 
+  background-size: cover; background-position: center;`;
   
   trama.innerHTML=items.Plot;
     
@@ -150,7 +153,7 @@ lista.appendChild(li);
 
 
 export const fetch_api_searchbar = (s) =>{
-    const urls =`${BASE_URL}&s=${s}`;
+    const urls =`${BASE_URL}s=${s}`;
     console.log(urls);
     fetch(urls)
       .then((response) => response.json())
@@ -202,7 +205,8 @@ const viewItems_searchbar = (items) => {
     card.addEventListener('click', () => 
     {
       location.href = `./scheda.html`;
-      sessionStorage.setItem('1', oggetto.Title);
+      sessionStorage.setItem('1', oggetto.imdbID);
+      sessionStorage.setItem('2', oggetto.Title);
     });
 
     p.appendChild(textnode);
@@ -212,13 +216,24 @@ const viewItems_searchbar = (items) => {
   }
 
 
- barra_di_ricerca.addEventListener('keyup', (e) => 
+ barra_di_ricerca.addEventListener('input', (e) => 
  { 
    if(barra_di_ricerca.value==""||e.key==" "){
   
   }else{
-    primapagina.innerHTML="";
-    riga.innerHTML="";
+    
+    let child = primapagina.lastElementChild;
+    while(child){
+      primapagina.removeChild(child);
+      child=primapagina.lastElementChild;
+    }
+
+    let child2 = riga.lastElementChild;
+    while(child2){
+      riga.removeChild(child2);
+      child2=riga.lastElementChild;
+    }
+   
     fetch_api_searchbar(barra_di_ricerca.value);
   }
  });
