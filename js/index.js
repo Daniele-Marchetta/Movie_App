@@ -44,6 +44,10 @@ const creacard_specifica = (item, tipo) => {
 };
 
 const generacard = (item) => {
+
+  const style_par="text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bolder; background-color : rgba(0, 0, 0, .5); margin : 0px ; padding : 20px;";
+  const style_slide=`background-image: url(${item.Poster});`;
+
   const slide = document.createElement("div");
   
   slide.addEventListener('click', () => 
@@ -58,13 +62,11 @@ const generacard = (item) => {
   if (item.Poster == "N/A") {
    
   } else {
-    slide.style = `background-image: url(${item.Poster}); `;
+    slide.style=style_slide;
   }
 
   const par = document.createElement("p");
-  par.style =
-    "text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bolder; background-color : rgba(0, 0, 0, .5); margin : 0px ; padding : 20px;";
-
+  par.style = style_par;
   const node = document.createTextNode(item.Title);
 
   par.appendChild(node);
@@ -129,11 +131,12 @@ lista.appendChild(li);
  }
  const Filtraresult = (items) => {
 
+  const style_poster=`background-image: url(${items.Poster}); background-repeat: no-repeat; background-size: cover; background-position: center;`;
+  
   const Poster = document.getElementById("scheda_image");
   const trama = document.getElementById("trama");
 
-  Poster.style=`background-image: url(${items.Poster}); background-repeat: no-repeat; 
-  background-size: cover; background-position: center;`;
+  Poster.style=style_poster;
   
   trama.innerHTML=items.Plot;
     
@@ -182,34 +185,29 @@ const viewItems_searchbar = (items) => {
   
   const generacard_searchbar = (oggetto) =>{
  
-    
+    const style_paragrafo = "color : white ;text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bolder; background-color : rgba(0, 0, 0, .5); margin : 0px ; padding : 20px;";
+    const style_card_NA =`background-image: url(no-image.jpg); background-size : cover; background-position : center; height: 445px; width: 300px;`; 
+    const style_card = `background-image: url(${oggetto.Poster});  background-size : cover; background-position : center;height: 445px; width: 300px;`;
+
     const colonna = document.createElement("div");
     colonna.className="col pt-5 pb-5 d-flex justify-content-center";
     const card = document.createElement("div");
     card.className="card";
+
     const p = document.createElement("p");
-    p.style="color : white ;text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bolder; background-color : rgba(0, 0, 0, .5); margin : 0px ; padding : 20px;";
+    p.style=style_paragrafo;
+
     const textnode = document.createTextNode(oggetto.Title);
     if(oggetto.Poster=="N/A"){
-      card.style=`
-      background-image: url(no-image.jpg); 
-      background-size : cover; 
-      background-position : center;
-      height: 445px;
-      width: 300px;`
+      card.style=style_card_NA;
     }else{
-      card.style=`background-image: url(${oggetto.Poster}); 
-       background-size : cover; 
-       background-position : center;
-       height: 445px;
-      width: 300px;`
-       
+      card.style=style_card;
     }
     card.addEventListener('click', () => 
     {
-      location.href = `./scheda.html`;
       sessionStorage.setItem('1', oggetto.imdbID);
       sessionStorage.setItem('2', oggetto.Title);
+      location.href = `./scheda.html`;
     });
 
     p.appendChild(textnode);
