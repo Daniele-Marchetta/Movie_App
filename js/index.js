@@ -49,7 +49,10 @@ const generacard = (item) => {
   slide.addEventListener('click', () => 
 {
   location.href = `./scheda.html`;
-  sessionStorage.setItem('1', item.imdbID);
+
+  // Non usare 1 e 2 ma nomi (anche abbreviati)
+  // es. ID, TI. Meglio (anche nel caso di numeri dichiararli come costanti)
+  sessionStorage.setItem('1', item.imdbID); 
   sessionStorage.setItem('2', item.Title);
 });
 
@@ -62,6 +65,8 @@ const generacard = (item) => {
   }
 
   const par = document.createElement("p");
+  // FIXME: E' preferibile usare una classe CSS e non l'inline
+  // Se non è possibile dichiarare una costante separata.
   par.style =
     "text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bolder; background-color : rgba(0, 0, 0, .5); margin : 0px ; padding : 20px;";
 
@@ -73,7 +78,10 @@ const generacard = (item) => {
   return slide;
 };
 
-export const card_selezionata = () => {
+export const card_selezionata = () => { 
+  //FIXME: Prova a non usare sessionStorage ma direttamente la URL
+  // con parametri GET. Puoi estrapolare la URL della pagina corrente
+  // con location oppure window.location oppure document.URL
   if (!sessionStorage.getItem('1')){
     location.href="./index.html";
   }else{
