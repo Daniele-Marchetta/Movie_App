@@ -246,11 +246,6 @@ background-blend-mode: darken;
     }
 
 
-    #cerca {
-        display: none !important;
-
-    }
-
     #searchbar {
         margin-left: 0 !important;
         margin-top: 10px;
@@ -320,11 +315,7 @@ background-blend-mode: darken;
     }
 
 
-    #cerca {
-        display: none !important;
-
-    }
-
+   
     #searchbar {
         margin-left: 0 !important;
         margin-top: 10px;
