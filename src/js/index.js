@@ -193,7 +193,7 @@ const viewItems_searchbar = (items) => {
 const generacard_searchbar = (oggetto) => {
   const style_paragrafo =
     "color : white ;text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bolder; background-color : rgba(0, 0, 0, .5); margin : 0px ; padding : 20px;";
-  const style_card_NA = `background-image: url(no-image.jpg); background-size : cover; background-position : center; height: 445px; width: 300px;`;
+  const style_card_NA = `background-image: url(./img/no-image.jpg); background-size : cover; background-position : center; height: 445px; width: 300px;`;
   const style_card = `background-image: url(${oggetto.Poster});  background-size : cover; background-position : center;height: 445px; width: 300px;`;
 
   const colonna = document.createElement("div");
@@ -220,6 +220,7 @@ const generacard_searchbar = (oggetto) => {
   riga.appendChild(colonna);
 };
 
+if(barra_di_ricerca!=null){
 barra_di_ricerca.addEventListener("input", (e) => {
   if (barra_di_ricerca.value == "" || e.key == " ") {
   } else {
@@ -238,3 +239,4 @@ barra_di_ricerca.addEventListener("input", (e) => {
     fetch_api_searchbar(barra_di_ricerca.value);
   }
 });
+}
